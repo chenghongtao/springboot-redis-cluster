@@ -17,6 +17,7 @@ public class GoodsServiceImpl implements GoodsService{
 	private GoodsMapper goodsMapper;
 	
 	@Override
+	@Cacheable(cacheNames="goodsList")
 	public List<Goods> getList() {
 		return goodsMapper.findAll();
 	}
